@@ -19,6 +19,17 @@ This repository contains the complete backend script that outputs evaluation met
 * Python 3.8+
 * Git
 
+## 📊 Visualizations
+
+### Exploratory Data Analysis
+![EDA Plots](eda_plots.png)
+
+### Feature Importance
+![Feature Importance](feature_importance.png)
+
+### Actual vs. Predicted Prices
+![Actual vs Predicted](actual_vs_predicted.png)
+
 ### Step-by-Step Guide
 
 1. **Clone the repository:**
