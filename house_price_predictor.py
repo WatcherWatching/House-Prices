@@ -127,12 +127,7 @@ print(f"✅ Encoded {len(cat_cols)} categorical columns")
 
 print(f"\nFinal feature count: {df_fe.shape[1] - 1} features")
 
-# ============================================================
-# STEP 4 — SELECT TOP FEATURES (keep it clean for Streamlit UI)
-# ============================================================
-print("\n" + "=" * 55)
-print("STEP 4: Feature Selection")
-print("=" * 55)
+# SELECT TOP FEATURES (keep it clean for Streamlit UI)
 
 # Top features to use — mix of engineered + original
 TOP_FEATURES = [
@@ -149,12 +144,9 @@ y = df_fe['SalePrice']
 print(f"Using {len(TOP_FEATURES)} features")
 print(f"X shape: {X.shape}, y shape: {y.shape}")
 
-# ============================================================
 # STEP 5 — TRAIN/TEST SPLIT + SCALE
-# ============================================================
-print("\n" + "=" * 55)
-print("STEP 5: Train/Test Split & Scaling")
-print("=" * 55)
+
+
 
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
@@ -166,9 +158,9 @@ X_test_scaled = scaler.transform(X_test)
 
 print(f"Train size: {X_train.shape[0]} | Test size: {X_test.shape[0]}")
 
-# ============================================================
+
 # STEP 6 — TRAIN LINEAR REGRESSION vs RIDGE (compare both)
-# ============================================================
+
 print("\n" + "=" * 55)
 print("STEP 6: Model Training — Linear vs Ridge")
 print("=" * 55)
@@ -201,9 +193,8 @@ print(f"\n→ Ridge wins on CV score. Using Ridge for deployment.")
 rmse_dollars = np.expm1(ridge_rmse + np.mean(y_test)) - np.expm1(np.mean(y_test))
 print(f"→ Ridge R²: {ridge_r2:.4f}  (model explains {ridge_r2*100:.1f}% of price variance)")
 
-# ============================================================
-# STEP 7 — FEATURE IMPORTANCE PLOT
-# ============================================================
+# FEATURE IMPORTANCE PLOT
+
 print("\n" + "=" * 55)
 print("STEP 7: Feature Importance")
 print("=" * 55)
