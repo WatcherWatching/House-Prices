@@ -23,5 +23,5 @@ This repository contains the complete backend script that outputs evaluation met
 
 1. **Clone the repository:**
    ```bash
-   git clone [(https://github.com/WatcherWatching/House-Prices.git)](https://github.com/WatcherWatching/House-Prices.git)
+   git clone https://github.com/WatcherWatching/House-Prices.git
    cd House-Prices
