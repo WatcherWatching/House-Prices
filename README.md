@@ -1,38 +1,70 @@
-# House Price Predictor - Day 1: Machine Learning Core
+# 🏠 House Price Predictor
 
-A machine learning pipeline that performs Exploratory Data Analysis (EDA), feature engineering, and trains a Ridge Regression model to predict house prices using the Kaggle House Prices dataset. 
+A machine learning web app that predicts house sale prices using Ridge Regression, trained on the Kaggle House Prices dataset.
 
-This repository contains the complete backend script that outputs evaluation metrics, visual plots, and serialized model files ready for deployment.
+**[🚀 Live Demo →](your-streamlit-link-here)**
+
+---
+
+## 📊 Model Performance
+| Metric | Score |
+|--------|-------|
+| R² Score | ~0.87 |
+| Cross-val R² (5-fold) | ~0.85 |
+| Algorithm | Ridge Regression (α=10) |
+| Training samples | 1,456 |
+| Features used | 20 |
 
 ---
 
 ## 🛠️ Tech Stack
-
-* **Language:** Python
-* **Libraries:** Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, Pickle
+`Python` `scikit-learn` `Pandas` `NumPy` `Streamlit` `Matplotlib` `Seaborn` `Joblib`
 
 ---
 
-## 📦 Installation & Setup
+## 🔍 Project Highlights
+- **EDA** — distribution analysis, correlation heatmap, outlier detection
+- **Feature Engineering** — created 7 new features (TotalSF, TotalBath, HouseAge, etc.)
+- **Model Comparison** — Linear Regression vs Ridge; Ridge selected for lower variance
+- **Deployed App** — interactive Streamlit UI with live predictions and feature importance chart
 
-### Prerequisites
-* Python 3.8+
-* Git
+---
 
-## 📊 Visualizations
+## 📁 Project Structure
+```
+house-price-predictor/
+├── house_price_day1.py     # EDA + training pipeline
+├── app.py                  # Streamlit web app
+├── model.pkl               # Trained Ridge model
+├── scaler.pkl              # StandardScaler
+├── features.pkl            # Feature list
+├── requirements.txt
+└── README.md
+```
 
-### Exploratory Data Analysis
-![EDA Plots](eda_plots.png)
+---
 
-### Feature Importance
-![Feature Importance](feature_importance.png)
+## ▶️ Run Locally
+```bash
+git clone https://github.com/yourusername/house-price-predictor
+cd house-price-predictor
+pip install -r requirements.txt
 
-### Actual vs. Predicted Prices
-![Actual vs Predicted](actual_vs_predicted.png)
+# 1. Download train.csv from Kaggle and place it here
+# 2. Train the model
+python house_price_day1.py
 
-### Step-by-Step Guide
+# 3. Launch the app
+streamlit run app.py
+```
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/WatcherWatching/House-Prices.git
-   cd House-Prices
+---
+
+## 📈 Key Findings
+- **Overall Quality** and **Total Square Footage** are the strongest price predictors
+- Log-transforming SalePrice improved model fit significantly
+- Ridge regularization reduced overfitting vs plain Linear Regression
+
+---
+
+*Built as part of a hands-on ML learning journey covering statistics, feature engineering, and regression algorithms.*
