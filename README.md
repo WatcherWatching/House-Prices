@@ -46,7 +46,7 @@ house-price-predictor/
 
 ## ▶️ Run Locally
 ```bash
-git clone https://github.com/yourusername/house-price-predictor
+git clone https://github.com/WatcherWatching/house-price-predictor
 cd house-price-predictor
 pip install -r requirements.txt
 
